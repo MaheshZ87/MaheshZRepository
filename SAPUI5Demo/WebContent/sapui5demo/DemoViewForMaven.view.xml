@@ -1,0 +1,72 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" controllerName="sapui5demo.DemoViewForMaven" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Title">
+		<content>
+
+			
+					<List id="list" items="{empModel>/results}" mode="{device>/listMode}"
+						selectionChange="handleSelect">
+						<items>
+							<ObjectListItem id="MAIN_LIST_ITEM" type="{device>/listItemType}"
+								title="{empModel>EmployeeID}" number="{empModel>FirstName}"
+								numberUnit="{empModel>LastName}">
+								<attributes>
+									<ObjectAttribute id="ATTR1" text="{empModel>Country}" />
+									<ObjectAttribute id="ATTR2" text="{empModel>City}" />
+								</attributes>
+							</ObjectListItem>
+						</items>
+					</List>
+				
+				<!-- <VBox width="50%">
+
+					<Table id="idOrdersTable" inset="false" items="{empModel>/results}">
+						<headerToolbar>
+							<Toolbar>
+								<Label text="Orders"></Label>
+								<Button text="Chart View" type="Emphasized" press="displayChartView"></Button>
+								<ToolbarSpacer></ToolbarSpacer>
+								<Button icon="sap-icon://drop-down-list" press="handleViewSettingsDialogButtonPressed" />
+							</Toolbar>
+						</headerToolbar>
+						<columns>
+							<Column width="12em">
+								<Text text="Order Number" />
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text text="Customer" />
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Right">
+								<Text text="Order Date" />
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+								<Text text="Shipping Address" />
+							</Column>
+							<Column hAlign="Right">
+								<Text text="Shipping City" />
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem type="Navigation" press="handleOrderPressJS">
+								<cells>
+									<ObjectIdentifier title="{empModel>EmployeeID}"
+										class="sapMTableContentMargin" />
+									<Text text="{empModel>FirstName}" />
+									<Text text="{OrderDate}" />
+									<Text text="{empModel>LastName}" />
+									<Text text="{empModel>Country}" />
+									<ObjectNumber number="{WeightMeasure}" unit="{WeightUnit}"
+										state="{ path: 'WeightMeasure', formatter: 'sap.m.sample.Table.Formatter.weightState' 
+													}" />
+									<ObjectNumber number="{Price}" unit="{CurrencyCode}" />
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+
+				</VBox> -->
+
+		</content>
+	</Page>
+	<!-- <Button text="Trigger Email" press="handleEmailTrigger"></Button> </core:View> -->
+</core:View>
